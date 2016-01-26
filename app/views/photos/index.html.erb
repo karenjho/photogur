@@ -1,6 +1,10 @@
 <h1>All Photos</h1>
 
+<p>
+  <%= link_to "New Photo", new_photo_path %>
+</p>
+
 <% @photos.each do |photo| %>
 <p><%= photo.artist %>: <%= photo.title %> (<%= photo.year %>)</p>
-<%= image_tag(photo.url) %>
+<%= link_to image_tag(photo.url), photo_path(photo.id) %>
 <% end %>
